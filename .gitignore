@@ -1,0 +1,6 @@
+source/*/
+*.swp
+*~
+Build
+MYMETA*
+_build/

@@ -3,5 +3,7 @@ lib/Alien/DBD/SQLite/BundledExtensions.pm
 lib/DBD/SQLite/BundledExtensions.pm
 lib/DBD/SQLite/Ext/Spellfix.pm
 MANIFEST			This list of files
+META.json
+META.yml
 source/sqlite-src-3150200.zip
-test.pl
+t/01-load-all.t

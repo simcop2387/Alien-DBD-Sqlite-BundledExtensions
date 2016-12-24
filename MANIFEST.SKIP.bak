@@ -13,5 +13,3 @@
 
 # Avoid archives of this distribution
 \bAlien-DBD-SQLite-BundledExtensions-[\d\.\_]+
-\b_build
-\b_alien

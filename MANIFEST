@@ -1,0 +1,7 @@
+Build.PL
+lib/Alien/DBD/SQLite/BundledExtensions.pm
+lib/DBD/SQLite/BundledExtensions.pm
+lib/DBD/SQLite/Ext/Spellfix.pm
+MANIFEST			This list of files
+source/sqlite-src-3150200.zip
+test.pl

@@ -4,3 +4,6 @@ source/*/
 Build
 MYMETA*
 _build/
+_share/
+_alien/
+blib/

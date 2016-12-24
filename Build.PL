@@ -12,7 +12,7 @@ my $cc = $Config{cc};
 # TODO this probably doesn't work on windows anyway.  Need to look into how to make that work correctly anyway.
 my $lib_ext = $^O =~ 'mswin' ? 'dll' : 'so';
 
-my @extensions = qw/spellfix csv ieee754 nextchar percentile series totype wholenumber compress eval/;
+my @extensions = qw/spellfix csv ieee754 nextchar percentile series totype wholenumber eval/;
 
 # TODO this needs to support mswin32
 my @build_commands = map {"$cc -shared -I$dbd_dist -O2 -fPIC -o $_.$lib_ext ext/misc/$_.c"} @extensions;

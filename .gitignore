@@ -3,6 +3,7 @@ source/*/
 *~
 Build
 MYMETA*
+META*
 _build/
 _share/
 _alien/

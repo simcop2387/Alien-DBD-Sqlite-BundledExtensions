@@ -7,7 +7,7 @@ use DBI;
 use File::Find;
 use DBD::SQLite::BundledExtensions;
 
-use Test::Simple;
+use Test::Simple tests => 9;
 
 #ok(defined $dbh, "Can create SQLite in memory DB");
 

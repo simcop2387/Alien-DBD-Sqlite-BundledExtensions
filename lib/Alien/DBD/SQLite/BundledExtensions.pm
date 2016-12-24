@@ -8,6 +8,8 @@ __END__
 
 Alien::DBD::SQLite::BundledExtesions - builds a series of SQLite extensions provided with the SQLite source to be compatible with DBD::SQLite
 
+See L<DBD::SQLite::BundledExtensions> for more information about the extensions
+
 It provides the following extensions from the SQLite source:
 
 =over
@@ -31,3 +33,5 @@ It provides the following extensions from the SQLite source:
 =item wholenumber 
 
 =back
+
+=head1

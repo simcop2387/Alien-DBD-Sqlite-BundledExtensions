@@ -13,7 +13,7 @@ my $lib_ext = $^O =~ 'mswin' ? 'dll' : 'so';
 my @extensions = qw/spellfix csv/;
 
 # TODO this needs to support mswin32
-my @build_commands = map {"$cc -shared -fPIC -o $_.$lib_ext source/sqlite-src-3150200/ext/misc/$_.c"} @extensions;
+my @build_commands = map {"$cc -shared -fPIC -o $_.$lib_ext ext/misc/$_.c"} @extensions;
 my @install_commands = map {"cp $_.$lib_ext %s"} @extensions;
 
 
@@ -21,11 +21,17 @@ my $builder = Alien::Base::ModuleBuild->new(
   module_name => 'Alien::DBD::SQLite::BundledExtensions',
 
   license => 'artistic_2', # TODO this might need to change based on the license of the extensions I'm bundling with this.  Do more research.
+  alien_repository => {
+    protocol => 'local',
+    location => 'source/',
+    pattern  => qr{^sqlite-src-([0-9\.]+)\.zip$},
+  },
 
   configure_requires => {
     'Alien::Base::ModuleBuild' => '0.005',
     'Module::Build' => '0.28',
     'DBD::SQLite' => 0,
+    'Archive::Zip' => 0,
   },
   requires => {
     'Alien::Base' => '0.005',

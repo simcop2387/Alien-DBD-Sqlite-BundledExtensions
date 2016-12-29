@@ -1,5 +1,6 @@
 package Alien::DBD::SQLite::BundledExtensions;
 
+use Config;
 use File::ShareDir 'dist_dir';
 
 our $VERSION=0.001;

@@ -1,7 +1,6 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
-use Config;
 use lib './lib';
 use Alien::DBD::SQLite::BundledExtensions;
 

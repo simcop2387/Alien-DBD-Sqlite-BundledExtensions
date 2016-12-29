@@ -20,14 +20,14 @@ sub get_build_commands {
     my $shared = $^O =~ /darwin/ ? '-dynamiclib' : '-shared';
     my @build_commands = map {"$cc $shared -I$dbd_dist -O2 -fPIC -o $_.$lib_ext ext/misc/$_.c"} @extensions;
 
-    return @build_commands;
+    return \@build_commands;
 }
 
 sub get_install_commands {
     my $copy_cmd = $^O =~ /mswin/ ? 'copy' : 'cp';
     my @install_commands = map {"$copy_cmd $_.$lib_ext %s"} @extensions;
 
-    return @install_commands;
+    return \@install_commands;
 }
 
 1;

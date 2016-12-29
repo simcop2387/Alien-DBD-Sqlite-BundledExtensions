@@ -8,3 +8,4 @@ _build/
 _share/
 _alien/
 blib/
+Alien-*.tar.gz

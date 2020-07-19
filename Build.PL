@@ -21,6 +21,7 @@ my $builder = Alien::Base::ModuleBuild->new(
     'Module::Build' => '0.28',
     'DBD::SQLite' => 0,
     'Archive::Zip' => 0,
+    'File::ShareDir' => 0,
   },
   requires => {
     'Alien::Base' => '0.005',

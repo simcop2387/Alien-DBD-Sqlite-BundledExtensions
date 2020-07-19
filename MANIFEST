@@ -1,5 +1,5 @@
 Build.PL
-lib/Alien/DBD/SQLite/BundledExtensions.pm
+buildext/Alien/DBD/SQLite/BundledExtensions.pm
 lib/DBD/SQLite/BundledExtensions.pm
 MANIFEST			This list of files
 META.json

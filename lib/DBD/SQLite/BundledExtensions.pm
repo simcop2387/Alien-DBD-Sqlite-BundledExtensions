@@ -1,9 +1,13 @@
 package DBD::SQLite::BundledExtensions;
 
+# ABSTRACT: Provides a number of C extensions for DBD::SQLite and some functions to help load them
+
 use strict;
 
 use File::Find;
 use File::Spec;
+
+our $VERSION="0.002";
 
 for my $ext (qw/spellfix csv ieee754 nextchar percentile series totype wholenumber eval/) {
     eval "sub load_${ext} {my (\$self, \$dbh)=\@_; \$self->_load_extension(\$dbh, '${ext}')}";

@@ -3,7 +3,7 @@ package Alien::DBD::SQLite::BundledExtensions;
 use Config;
 use File::ShareDir 'dist_dir';
 
-our $VERSION=0.001;
+our $VERSION=0.002;
 our @extensions = qw/spellfix csv ieee754 nextchar percentile series totype wholenumber eval/;
 
 my $dbd_dist = dist_dir('DBD-SQLite');

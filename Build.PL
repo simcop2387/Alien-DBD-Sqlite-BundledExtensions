@@ -1,13 +1,13 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
-use lib './lib';
+use lib './buildext';
 use Alien::DBD::SQLite::BundledExtensions;
 
 use Alien::Base::ModuleBuild;
 
 my $builder = Alien::Base::ModuleBuild->new(
-  module_name => 'Alien::DBD::SQLite::BundledExtensions',
+  module_name => 'DBD::SQLite::BundledExtensions',
 
   license => 'artistic_2', # TODO this might need to change based on the license of the extensions I'm bundling with this.  Do more research.
   alien_repository => {

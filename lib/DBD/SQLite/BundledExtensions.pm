@@ -49,7 +49,7 @@ sub _locate_extension_library {
 __END__
 =head1 NAME
 
-DBD::SQLite::BundledExtesions - Provide a series of C extensions for DBD::SQLite and some helper functions to load them
+DBD::SQLite::BundledExtensions - Provide a series of C extensions for DBD::SQLite and some helper functions to load them
 
 =head1 METHODS
 

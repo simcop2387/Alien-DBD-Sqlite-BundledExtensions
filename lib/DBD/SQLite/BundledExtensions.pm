@@ -7,7 +7,7 @@ use strict;
 use File::Find;
 use File::Spec;
 
-our $VERSION="0.002";
+our $VERSION="0.003";
 
 for my $ext (qw/spellfix csv ieee754 nextchar percentile series totype wholenumber eval/) {
     eval "sub load_${ext} {my (\$self, \$dbh)=\@_; \$self->_load_extension(\$dbh, '${ext}')}";

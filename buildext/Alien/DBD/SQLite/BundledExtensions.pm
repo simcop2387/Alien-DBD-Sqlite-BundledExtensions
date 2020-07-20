@@ -10,23 +10,26 @@ my $dbd_dist = dist_dir('DBD-SQLite');
 my $cc = $Config{cc};
 
 # TODO this probably doesn't work on windows anyway.  Need to look into how to make that work correctly anyway.
-my $lib_ext = $^O =~ /mswin/ ? 'dll' : 
-              $^O =~ /darwin/ ? 'dylib' : 'so';
+my $lib_ext = $^O =~ /mswin/i ? 'dll' : 
+              $^O =~ /darwin/i ? 'dylib' : 'so';
 
 # TODO this needs to support mswin32
 
 
 
 sub get_build_commands {
-    my $shared = $^O =~ /darwin/ ? '-dynamiclib' : '-shared';
+    my $shared = $^O =~ /darwin/i ? '-dynamiclib' : '-shared';
     my @build_commands = map {"$cc $shared -I$dbd_dist -O2 -fPIC -o $_.$lib_ext ext/misc/$_.c"} @extensions;
 
     return \@build_commands;
 }
 
 sub get_install_commands {
-    my $copy_cmd = $^O =~ /mswin/ ? 'copy' : 'cp';
-    my @install_commands = map {"$copy_cmd $_.$lib_ext %s"} @extensions;
+    my $copy_cmd = $^O =~ /mswin/i ? 'copy' : 'cp';
+    my @install_commands = map {
+       my $object_file = "$_.$lib_ext";
+       "$copy_cmd $_.$lib_ext %s"
+       } @extensions;
 
     return \@install_commands;
 }

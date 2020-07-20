@@ -6,3 +6,4 @@ META.json
 META.yml
 source/sqlite-src-3150200.zip
 t/01-load-all.t
+Changes

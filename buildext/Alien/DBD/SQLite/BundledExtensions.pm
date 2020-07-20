@@ -25,13 +25,15 @@ sub get_build_commands {
 }
 
 sub get_install_commands {
-    my $copy_cmd = $^O =~ /mswin/i ? 'copy' : 'cp';
-    my @install_commands = map {
-       my $object_file = "$_.$lib_ext";
-       "$copy_cmd $_.$lib_ext %s"
-       } @extensions;
+  if ($^O =~ /mswin/i) {
+    my @install_commands = map {"copy $_.$lib_ext %DESTDIR%"} @extensions;
 
     return \@install_commands;
+  } else {
+    my @install_commands = map {"cp $_.$lib_ext %s"} @extensions;
+
+    return \@install_commands;
+  }
 }
 
 1;
